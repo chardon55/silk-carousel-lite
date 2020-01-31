@@ -1,0 +1,78 @@
+/*	Carousel Theme Scheme: Loli Pink
+	by dy55
+	2019-8-25
+	for Carousel v1.0.0
+	v1.1.0
+*/
+/*This theme needs bootstrap to work properly*/
+.loli-pink{
+	background-color: rgb(255, 68, 171);
+	border-radius: 12px;
+	outline: none !important;
+	box-shadow: 0 0 8px snow;
+	border: 1.6px dashed rgb(255, 68, 171);
+}
+.loli-pink * {
+	font-family: Harrington, STHupo, HGSoeiKakupoptai;
+}
+.loli-pink .htBoard {
+	border-radius: 12px;
+	opacity: 0;
+	transition: all 0.3s;
+	border: 1.2px ridge rgb(255, 68, 171);
+	background: url(../images/loli-pink/decor.png) rgba(255, 254, 248, 0.90) no-repeat !important;
+	background-size: 8% !important;
+	padding-left: 6%;
+	filter: none !important;
+}
+.loli-pink .htBoard * {
+	color: rgb(241, 97, 179);
+}
+.loli-pink:hover .htBoard{
+	opacity: 1;
+}
+.loli-pink .barSet{
+	filter: none !important;
+}
+.loli-pink .progressBar {
+	border-radius: 9999px;
+	background-color: rgba(255, 73, 173, 0.86);	
+	border: 1.5px solid rgb(255, 68, 171);
+}
+.loli-pink .progressBar div{
+	border-radius: 9999px;
+}
+
+.loli-pink .btnPrev{
+	background-image: url(../images/loli-pink/prev.png);
+}
+
+.loli-pink .btnNext{
+	background-image: url(../images/loli-pink/next.png);
+	transform: none;
+}
+
+.loli-pink .turnBtn{
+	background-color: rgb(255, 84, 182);
+	filter: none !important;
+	box-shadow: 0 0 8px snow;
+	transition: opacity 0.3s, box-shadow 0.3s;
+}
+.loli-pink .turnBtn:hover{
+	box-shadow: 0 0 14px snow;
+}
+
+.loli-pink .playPause {
+	background-color: rgb(255, 84, 182);
+	box-shadow: 0 0 8px snow;
+	transition: opacity 0.5s;
+	background-size: 67%;
+	filter: none !important;
+}
+
+.loli-pink *:lang(zh-cn){
+	font-family: STHupo;
+}
+.loli-pink *:lang(ja){
+	font-family: HGSoeiKakupoptai;
+}

@@ -1,0 +1,73 @@
+/*	File created date: 2019-8-25
+ 	The Taste of Sky	Created: 2019-8-23
+ 	For Carousel 1.0.0
+	v1.1.0
+*/
+.the-taste-of-sky {
+	background-color: deepskyblue;
+	border-radius: 8px;
+	outline: none !important;
+	border: 1px solid rgb(115, 243, 255);
+}
+
+.the-taste-of-sky * {
+	filter: none !important;
+	font-family: Cooper, YouYuan, 'UD Digi Kyokasho N-B', 'Malgun Gothic';
+}
+
+.the-taste-of-sky .htBoard {
+	background: linear-gradient(rgba(141, 227, 255, 0.70), rgba(29, 162, 201, 0.70));
+	border-radius: 8px;	
+}
+
+	.the-taste-of-sky .turnBtn,
+	.the-taste-of-sky .playPause {
+		background-color: rgba(29, 162, 201, 0.70);
+		border-radius: 8px;
+	}
+
+	.the-taste-of-sky .turnBtn {
+		border-radius: 0 8px 8px 0;
+	}
+
+.the-taste-of-sky .turnBtn:hover,
+.the-taste-of-sky .playPause:hover {
+	background-color: rgb(29, 162, 201);
+}
+
+.the-taste-of-sky .barSet{
+	filter: none !important;
+}
+
+.the-taste-of-sky .progressBar {
+	background-color: rgba(108, 196, 231, 0.50);
+	border-radius: 4px;
+}
+
+.the-taste-of-sky .progressBar>div {
+	background-color: rgba(255, 255, 255, 0.87);
+}
+
+.the-taste-of-sky *:lang(zh-cn) {
+	/*Simplified Chinese*/
+	font-family: YouYuan;
+}
+
+.the-taste-of-sky *:lang(zh-mo),
+.the-taste-of-sky *:lang(zh-hk),
+.the-taste-of-sky *:lang(zh-tw) {
+	/*Traditional Chinese*/
+	font-family: 'Microsoft JhengHei UI';
+}
+
+.the-taste-of-sky *:lang(ja) {
+	/*Japanese*/
+	font-family: 'UD Digi Kyokasho N-B';
+}
+
+.the-taste-of-sky *:lang(ko) {
+	/*Korean*/
+	font-family: 'Malgun Gothic';
+}
+
+/*************************/

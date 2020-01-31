@@ -1,0 +1,179 @@
+/*	Carousel StyleSheet
+ *	Version: 1.0.0
+ *	<> by dy55
+ */
+
+:root {
+	--button-width: 2.4rem;
+	--buttton-height: 2.4rem;
+}
+
+.silkCarousel {
+	background-color: purple;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+}
+.silkCarousel * {
+	font-family: Calibri, DengXian, 'Yu Gothic UI', 'Malgun Gothic';
+}
+
+.statusField{
+	position: absolute;
+	color: #ff0000;
+	z-index: 1000;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+.hText{
+	color: #ffffff;
+	padding: 1%;
+}
+
+.leaveHide{
+	opacity: 0;
+}
+
+.slideAnchor{
+	padding: 1%;
+	text-align: center;
+	color: #ffffff;
+	position: relative;
+	transition: all 0.3s;
+	text-decoration: none;
+	margin-top: 1%;
+}
+.slideAnchor:hover{
+	text-decoration: underline;
+	color: #ffffff;
+}
+.slideAnchor:hover > .rightArrowLearnMore{
+	transform: translate(5px);
+}
+
+.rightArrowLearnMore{
+	position: relative;
+	margin-left: 5px;
+	display: inline-block;
+	transition: all 0.3s;
+}
+
+.playPause{
+	width: var(--button-width);
+	height: var(--buttton-height);
+	transition: opacity 0.5s, background-color 0.3s, box-shadow 0.3s;
+	cursor: pointer;
+	position: relative;
+	float: left;
+	background: center no-repeat rgba(0, 0, 0, 0.3);
+	background-size: 35%;
+	z-index: 100;
+	margin-left: 20%;
+	bottom: -64px;
+}
+	.playPause:hover {
+		background: center no-repeat #6d6d6d;
+		background-size: 35%;
+	}
+
+.htBoard{
+	width: 90%;
+	padding-left: 2%;
+}
+.htBoard *{
+	color: #ffffff;
+}
+
+/*Languages*/
+.htBoard:lang(zh-cn) {	/*Simplified Chinese*/
+	font-family: DengXian;
+}
+.htBoard:lang(zh-mo), .htBoard:lang(zh-hk), .htBoard:lang(zh-tw){	/*Traditional Chinese*/
+	font-family: 'Microsoft JhengHei UI';
+}
+.htBoard:lang(ja){	/*Japanese*/
+	font-family: 'Yu Gothic UI';
+}
+.htBoard:lang(ko){	/*Korean*/
+	font-family: 'Malgun Gothic';
+}
+
+/**************************************/
+.turnBtn {
+	background: no-repeat center;
+	background-size: cover;
+	transition: all 0.3s;
+	background-image: url(../images/prev.png);
+	z-index: 100;
+}
+.turnBtn:hover{
+	background-color: #6d6d6d;
+}
+
+.btnPrev{
+	float: left;
+}
+
+
+.btnNext{
+	float: right;
+	transform: rotateY(180deg);
+}
+
+/*Progress bar Set*/
+.barSet{
+	height: 3%;
+	position: relative;
+	width: 100%;
+	z-index: 1;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+/*Progress bar embedded*/
+.progressBar{
+	position: relative;
+	height: 100%;
+	display: inline-block;
+	overflow: hidden;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+.progressBar > div{
+	background-color: #ffffff;
+	position: relative;
+	height: 100%;
+	width: 0;
+	z-index: 2;
+}
+
+.button{
+	width: 42px;
+	height: 42px;
+	background-color: rgba(0, 0, 0, 0.3);
+	color: #ffffff;
+	display: inline-block;
+	text-align: center;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 800px){
+	.button{
+		width: 30px;
+		height: 30px;
+		font-size: 25px;
+	}
+}
+
+.statusBox{
+	float: left;
+	font-size: 120%;
+	margin: -4rem 0 0 0;
+	width: 100%;
+	text-align: center;
+	color: #FFFFFF;
+	text-shadow: 0 0 0.18rem #000000;
+	cursor: default;
+	z-index: 0;
+}

@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Theme Scheme: The Taste of Sky</title>
+
+	<link type="text/css" rel="stylesheet" href="../css/silk-carousel-lite.css" /><!--Carousel StyleSheet-->
+	<link type="text/css" rel="stylesheet" href="../css/CarouselTheme-TheTasteOfSky.css" />
+
+	<link type="text/css" rel="stylesheet" href="css/demoStyle.css" />
+
+	<style type="text/css">
+
+		body{
+			background-image: url(images/tfs-theme-pic.png);
+			background-color: skyblue;
+		}
+
+		.title{
+			margin-left: 20px;
+			margin-bottom: -20px;
+			color: #ffffff;
+			text-shadow: 0 0 3px #000000;
+			font-family: Cooper;
+		}
+
+	</style>
+	
+	<script src="js/jquery.min.js"></script><!--jQuery-->
+	<script src="../js/silk-carousel-lite.js"></script><!--Carousel Script-->
+</head>
+<body>
+	<div class="title">
+		<h2>Theme Scheme: The Taste of Sky</h2>
+		<label>The font effect will be different depending on the display language and the fonts whether are installed at the local PC.</label>
+	</div>
+	<div id="bannerCarousel"></div>
+	<script type="text/javascript">
+		carouselRun({
+			_target: "#bannerCarousel",
+			theme: "the-taste-of-sky",
+			width: "76%",
+			height: "500px",
+			imageSrcs: [
+			"images/qd1.jpg",
+			"images/qd2.jpg",
+			"images/qd3.jpg",
+			"images/qd4.jpg",
+			"images/qd5.jpg",
+			"images/qd6.jpg",
+			"images/qd7.jpg"
+		],
+			anchorHrefs: [
+				"images/qd1.jpg",
+				"images/qd2.jpg",
+				"#",
+				"images/qd4.jpg",
+				"images/qd5.jpg",
+				"images/qd6.jpg",
+				"#"
+			],
+			htBoardTexts: [
+				"<label>Brio of Qingdao</label><h2>May 4th Square</h2>",
+				"<h2>The old town in Qingdao</h2>",
+				"<h2>Old German Style House</h2>",
+				"<h2>The Christian Church in Qingdao</h2>",
+				"<h2>Olympic Sailing Center</h2>",
+				"<h2>Landing Stage</h2>",
+				"Let's find the beauty of Qingdao together!",
+			]});
+	</script>
+</body>
+</html>

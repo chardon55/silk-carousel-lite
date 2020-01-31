@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>示范页面 - 活力之城——青岛</title>
+
+	<link type="text/css" rel="stylesheet" href="../css/silk-carousel-lite.css" /><!--Carousel StyleSheet-->
+	<link type="text/css" rel="stylesheet" href="css/demoStyle.css" />
+
+	<script src="js/jquery.min.js"></script><!--jQuery-->
+	<script src="../js/silk-carousel-lite.js"></script><!--Carousel Script-->
+	<script src="../locale/Carousel_zh-cn.js"></script><!--Carousel Language Script (zh-cn)-->
+</head>
+<body>
+	<div id="bannerCarousel"></div>
+	<script type="text/javascript">
+		carouselRun({
+			_target: "#bannerCarousel",
+			width: "80%",
+			height: "550px",
+			imageSrcs: [
+				"images/qd1.jpg",
+				"images/qd2.jpg",
+				"images/qd3.jpg",
+				"images/qd4.jpg",
+				"images/qd5.jpg",
+				"images/qd6.jpg",
+				"images/qd7.jpg"
+			],
+			anchorHrefs: [
+				"images/qd1.jpg",
+				"images/qd2.jpg",
+				"#",
+				"images/qd4.jpg",
+				"images/qd5.jpg",
+				"images/qd6.jpg",
+				"#"
+			],
+			htBoardTexts: [
+				"<label>活力青岛</label><h1>五四广场</h1><h2>May 4th Square</h2>",
+				"",
+				"",
+				"<h1>基督教堂</h1><h2>Christian Church in Qingdao</h2>",
+				"<h1>奥帆中心</h1><h2>Olympic Sailing Center</h2>",
+				"<h1>栈桥</h1><h2>Landing Stage</h2>",
+				"一起来探索青岛的魅力吧！",
+			],
+			buttonsFilter: [
+				"invert(100%)",
+				"",
+				"",
+				"",
+				"",
+				"",
+				""
+			],
+			customLearnMoreContent: [
+				"",
+				"点击进入",
+				"",
+				"",
+				"",
+				"",
+				""
+			]
+		});
+	</script>
+</body>
+</html>
