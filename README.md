@@ -1,5 +1,7 @@
 # 🎀 Silk Carousel Lite 🎀
 
+<img src="silk.png" width="200px" />
+
 ![Version_1.0.0](.github/info/version.svg)
 
 ## 🎯 Usage 🎯
