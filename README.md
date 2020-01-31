@@ -1,5 +1,4 @@
-# 🎀 Silk Carousel lite 🎀
-===
+# 🎀 Silk Carousel Lite 🎀
 
 ![Version_1.0.0](.github/info/version.svg)
 
