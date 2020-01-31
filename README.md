@@ -88,13 +88,13 @@ function carouselRun(info = {
     _outline: new Boolean,               //Show Outline (Default: true)
     playToggleBtn: new Boolean,          //Show Play/Pause Button (Default: true)
     mouseLeaveHideBtn: new Boolean,      //Hide Buttons When Mouse Leaves (Default: true)
-    buttonsFilter: new Array,            //Buttons' Filters for Each Slide
-    htBoardFilter: new Array,            //Hyper-text Board Filters for Each Slide
     htBoardBackground: new Boolean,      //Show Background of the Hyper-text Board (Default: true)
     customLearnMoreContent: new Array,   //Custom Content of "Learn More" Button for Each Slide
     startFrom: new Number,               //Start from Which Slide (Default: 1)
     progressBarFilters: new Array,       //Progress Bars' Filters for Each Slide
-    showStatus: new Boolean              //Whether show status box (Default: true)
+    showStatus: new Boolean,             //Whether show status box (Default: true)
+	showProgressBar = true,              //Show Progress Bar
+	intervalTime = 5000                  //Interval Time (ms)
 }){...}
 
 ```
