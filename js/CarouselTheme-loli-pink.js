@@ -1,6 +1,6 @@
 // Loli Pink Theme Scheme
 // 2019-8-26
-// for Carousel v1.0.0
+// for Carousel v1.1.0
 // v1.1.0
 // This theme needs bootstrap to work properly
 

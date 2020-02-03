@@ -1,5 +1,5 @@
-﻿//丝缎轮播轻量版（版本：1.0.0） 简体中文（中国）
-//Silk Carousel Lite v1.0.0 Simplified Chinese (China)
+﻿//丝缎轮播轻量版（版本：1.1.0） 简体中文（中国）
+//Silk Carousel Lite v1.1.0 Simplified Chinese (China)
 
 $$silkc.lang = "zh-cn";
 

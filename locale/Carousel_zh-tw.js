@@ -1,5 +1,5 @@
-﻿//絲緞輪播輕量版（版本：1.0.0） 繁體中文（中國臺灣）
-//Silk Carousel Lite v1.0.0 Traditional Chinese (Taiwan, China)
+﻿//絲緞輪播輕量版（版本：1.1.0） 繁體中文（中國臺灣）
+//Silk Carousel Lite v1.1.0 Traditional Chinese (Taiwan, China)
 
 $$silkc.lang = "zh-tw";
 

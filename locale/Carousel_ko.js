@@ -1,5 +1,5 @@
-﻿//실크 회전 목마 라이트 (버전 : 1.0.0) 한국어 (한국)
-//Silk Carousel v1.0.0 Korean (South Korea)
+﻿//실크 회전 목마 라이트 (버전 : 1.1.0) 한국어 (한국)
+//Silk Carousel v1.1.0 Korean (South Korea)
 
 $$silkc.lang = "ko";
 

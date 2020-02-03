@@ -1,31 +1,41 @@
 ﻿/*                    Silk Carousel Lite                    *
- *  Version: 1.0.0                                          *
+ *  Version: 1.1.0                                          *
  *  Created by: dy55                                        */
 
 /**
  * Silk Root
  */
-var $$silkc = new Object;
+var $$silkc = {
 
-$$silkc.pauseTime = 0;
+	pauseTime: 0,
 
-$$silkc.initializing = "Initializing...";
-$$silkc.noImage = "No Image";
-$$silkc.learnMore = "Learn more";
+	initializing: "Initializing...",
+	noImage: "No Image",
+	slideNumError: "Incorrect Slide Number",
 
-$$silkc.internalEventReference;
+	learnMore: "Learn more",
 
-$$silkc.playStatus;
-$$silkc.pause = "Paused";
-$$silkc.play = "Playing";
-$$silkc.statusBox = "statusBox";
+	internalEventReference: new Object,
 
-$$silkc.carouselInfo;
+	playStatus: "",
+	pause: "Paused",
+	play: "Playing",
+	shift: "Shifting",
+	statusBox: "statusBox",
 
-$$silkc.lang = "en";
-//If you would like more local language code, just modify it directly.
-//(if there exists the language file in your language at "lang" folder, please ingore it.)
+	carouselInfo: {},
 
+	lang: "en",
+	//If you would like more local language code, just modify it directly.
+	//(if there exists the language file in your language at "lang" folder, please ingore it.)
+
+	inspect: {
+		current: "Current Slide",
+		status: "Status",
+		duration: "Duration",
+		progress: "Slide Progress"
+	}
+}
 function carouselRun({
 	_target = new String,
 	theme = new String,
@@ -43,10 +53,11 @@ function carouselRun({
 	progressBarFilters = new Array,
 	showStatus = true,
 	showProgressBar = true,
-	intervalTime = 5000/*ms*/
+	intervalTime = 5000/*ms*/,
+	inspection_mode = false
 }) {
 
-	if (_target == undefined || _target == null) {
+	if (_target == undefined || _target == null || _target == "") {
 		throw new NoTargetException;
 	}
 
@@ -67,19 +78,16 @@ function carouselRun({
 		barFilters: progressBarFilters,
 		showStatus: showStatus,
 		showProgressBar: showProgressBar,
-		intervalTime: intervalTime
+		intervalTime: intervalTime,
+		inspection_mode: inspection_mode
 	}
-
-	////
 
 	FormatSet();
 	localeCheck();
 	otherPreset();      //otherPreset()
 	ProgressBarSetPut();
-	Init();
+	SilkCarouselInit();
 	otherOperation();   //otherOperation()
-
-	////
 }
 
 function FormatSet() {
@@ -92,17 +100,24 @@ function FormatSet() {
 
 	if ($$silkc.carouselInfo.usedTheme != null)
 		$($$silkc.carouselInfo.carouselTarget).addClass($$silkc.carouselInfo.usedTheme);
-	
 }
 
 
 const statusField = "statusField"; //Do NOT edit it.
 
-function Init() {
-
-	$($$silkc.carouselInfo.carouselTarget).prepend(`<span class='${statusField}'></span>`)
-		.addClass("silkCarousel");
+function SilkCarouselInit() {
+	$($$silkc.carouselInfo.carouselTarget).prepend(`<span class='${statusField}'></span>`).addClass("silkCarousel");
 	$(`${$$silkc.carouselInfo.carouselTarget} .${statusField}`).text($$silkc.initializing);
+
+	if ($$silkc.carouselInfo.imageArray.length <= 0) {
+		reportError($$silkc.noImage);
+		throw new NoSlideException;
+	}
+
+	if (typeof $$silkc.carouselInfo.curSlide != "number" || $$silkc.carouselInfo.curSlide < 1) {
+		reportError($$silkc.slideNumError);
+		throw new SlideNumberException;
+	}
 
 	const rightArrowLearnMore = "rightArrowLearnMore"; //Do NOT edit it.
 
@@ -173,7 +188,39 @@ function Init() {
 	});
 	
 	TurnTo($$silkc.carouselInfo.curSlide, $$silkc.carouselInfo);
-	carouselPlay(false);
+	if ($$silkc.carouselInfo.imageArray.length > 1) {
+		carouselPlay(false);
+	}
+	else {
+		carouselPause(false);
+		$(`${$$silkc.carouselInfo.carouselTarget} .playPause, ${$$silkc.carouselInfo.carouselTarget} .turnBtn`).css("display", "none");
+		$(`${$$silkc.carouselInfo.carouselTarget} .barSet`).css("display", "none");
+	}
+
+	if ($$silkc.carouselInfo.inspection_mode) {
+		inspect_init();
+	}
+}
+
+function inspect_init() {
+	$(`${$$silkc.carouselInfo.carouselTarget}, ${$$silkc.carouselInfo.carouselTarget} *`).addClass("silk-inspection");
+	let inspWindow = document.createElement('div');
+	inspWindow.className = "silk-inspection-window";
+	document.body.appendChild(inspWindow);
+	setInterval(() => {
+		inspWindow.innerHTML = `<span align="center"><b>Silk Carousel Inspection Mode</b></span><hr>\
+					${$$silkc.inspect.current}: ${$$silkc.carouselInfo.curSlide}<br>\
+					${$$silkc.inspect.status}: ${$$silkc.playStatus}<br>\
+					${$$silkc.inspect.duration}: ${$$silkc.carouselInfo.intervalTime} ms<br>\
+					${$$silkc.inspect.progress}: ${($(`${$$silkc.carouselInfo.carouselTarget} .bar${$$silkc.carouselInfo.curSlide - 1} > div`).width() / $(`${$$silkc.carouselInfo.carouselTarget} .bar${$$silkc.carouselInfo.curSlide - 1}`).width() * 100).toFixed(0)}%`
+	}, 0);
+
+	inspWindow.style.transform = "translateX(300px)";
+	$(`${$$silkc.carouselInfo.carouselTarget}, .silk-inspection-window`).hover(() => {
+		inspWindow.style.transform = "none";
+	}, () => {
+		inspWindow.style.transform = "translateX(300px)";
+	});
 }
 
 let offset = 0;//%
@@ -204,6 +251,8 @@ function ProgressBarSetPut() {
 
 	if (!$$silkc.carouselInfo.showProgressBar)
 		$(".barSet").css('display', 'none');
+
+	$(`.${barClassName}`).html("<div></div>");
 }
 
 function SliceToUnit(str) {
@@ -214,6 +263,8 @@ function SliceToUnit(str) {
 let barResetTimeout;
 
 function TurnTo(toSlide, transitionBar = true, clearBarFirst = true) {
+	let curStatus = $$silkc.playStatus;
+	$$silkc.playStatus = $$silkc.shift;
 
 	barHalt();
 	if (clearBarFirst)
@@ -221,33 +272,29 @@ function TurnTo(toSlide, transitionBar = true, clearBarFirst = true) {
 	
 	$$silkc.carouselInfo.curSlide = toSlide;
 
-	$(() => {
+	$($$silkc.carouselInfo.carouselTarget).css("background-image", `url(${$$silkc.carouselInfo.imageArray[toSlide - 1]})`);
+	$($$silkc.carouselInfo.carouselTarget + " .slideAnchor").attr("href", $$silkc.carouselInfo.anchorArray[toSlide - 1]);
 
-		$($$silkc.carouselInfo.carouselTarget).css("background-image", `url(${$$silkc.carouselInfo.imageArray[toSlide - 1]})`);
-		$($$silkc.carouselInfo.carouselTarget + " .slideAnchor").attr("href", $$silkc.carouselInfo.anchorArray[toSlide - 1]);
-
-		if ($$silkc.carouselInfo.barFilters[$$silkc.carouselInfo.curSlide - 1] != null) {
-			$(`${$$silkc.carouselInfo.carouselTarget} .barSet`).css({
-				"filter": $$silkc.carouselInfo.barFilters[$$silkc.carouselInfo.curSlide - 1]
-			});
-		}
+	if ($$silkc.carouselInfo.barFilters[$$silkc.carouselInfo.curSlide - 1] != null) {
+		$(`${$$silkc.carouselInfo.carouselTarget} .barSet`).css({
+			"filter": $$silkc.carouselInfo.barFilters[$$silkc.carouselInfo.curSlide - 1]
+		});
+	}
 		
-		checkimgurl();
-		checklearnMore();
-		checkhtText();
-		setCustomLabel();
+	checkimgurl();
+	checklearnMore();
+	checkhtText();
+	setCustomLabel();
 
-		barResetTimeout = setTimeout(() => {
-			barReset(transitionBar);
-		}, $$silkc.pauseTime);
-	});
+	barResetTimeout = setTimeout(() => {
+		barReset(transitionBar);
+		$$silkc.playStatus = curStatus;
+	}, $$silkc.pauseTime);
 }
 
 function TurnNext(transitionBar = true) {
-	if (++$$silkc.carouselInfo.curSlide > $$silkc.carouselInfo.imageArray.length)
-		TurnTo(1, transitionBar, false);
-	else
-		TurnTo($$silkc.carouselInfo.curSlide, transitionBar, false);
+	$$silkc.carouselInfo.curSlide = $$silkc.carouselInfo.curSlide % $$silkc.carouselInfo.imageArray.length + 1;
+	TurnTo($$silkc.carouselInfo.curSlide, transitionBar, false);
 }
 
 function TurnPrev(transitionBar = true) {
@@ -261,12 +308,6 @@ function TurnPrev(transitionBar = true) {
 //Progress Bar Section
 
 const barClassName = "progressBar"; //Do NOT edit it.
-
-$(() => {
-
-	$(`.${barClassName}`).html("<div></div>");
-
-});
 
 ///////////////////////////////////////
 
@@ -417,8 +458,8 @@ function localeCheck() {
 
 //Additional Functions
 
-function otherPreset(){}     //This function is safe to be overwritten.
-function otherOperation(){}  //This function is safe to be overwritten.
+function otherPreset(){ }     //This function is safe to be overwritten.
+function otherOperation(){ }  //This function is safe to be overwritten.
 
 /////////////////////
 
@@ -445,6 +486,10 @@ function barHalt() {
 	});
 }
 
+function reportError(str) {
+	$(`${$$silkc.carouselInfo.carouselTarget} .${statusField}`).text(str);
+}
+
 class SilkException extends Error {
 	constructor(message = "") {
 		this.message = message;
@@ -452,5 +497,13 @@ class SilkException extends Error {
 }
 
 class NoTargetException extends SilkException {
+}
 
+class SlideError extends SilkException {
+}
+
+class NoSlideException extends SlideError {
+}
+
+class SlideNumberException extends SlideError {
 }

@@ -1,5 +1,5 @@
-﻿//絲緞輪播輕量版（版本：1.0.0） 繁體中文（中國澳門特別行政區）
-//Silk Carousel Lite v1.0.0 Traditional Chinese (Macao SAR, China)
+﻿//絲緞輪播輕量版（版本：1.1.0） 繁體中文（中國澳門特別行政區）
+//Silk Carousel Lite v1.1.0 Traditional Chinese (Macao SAR, China)
 
 $$silkc.lang = "zh-mo";
 

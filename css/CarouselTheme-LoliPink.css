@@ -1,16 +1,15 @@
 /*	Carousel Theme Scheme: Loli Pink
 	by dy55
 	2019-8-25
-	for Carousel v1.0.0
-	v1.1.0
+	for Carousel v1.1.0
+	v1.2.0
 */
 /*This theme needs bootstrap to work properly*/
 .loli-pink{
 	background-color: rgb(255, 68, 171);
 	border-radius: 12px;
 	outline: none !important;
-	box-shadow: 0 0 8px snow;
-	border: 1.6px dashed rgb(255, 68, 171);
+	box-shadow: 0 0 8px 4px snow;
 }
 .loli-pink * {
 	font-family: Harrington, STHupo, HGSoeiKakupoptai;
@@ -24,23 +23,34 @@
 	background-size: 8% !important;
 	padding-left: 6%;
 	filter: none !important;
+	width: 95%;
 }
 .loli-pink .htBoard * {
 	color: rgb(241, 97, 179);
 }
 .loli-pink:hover .htBoard{
 	opacity: 1;
+	transform: translateY(47px);
 }
 .loli-pink .barSet{
 	filter: none !important;
+	margin-top: 16px !important;
+	/*width: 80% !important;*/
+	text-align: center;
 }
 .loli-pink .progressBar {
 	border-radius: 9999px;
 	background-color: rgba(255, 73, 173, 0.86);	
 	border: 1.5px solid rgb(255, 68, 171);
+	margin-right: 5% !important;
+	width: 20px !important;
+	height: 20px !important;
 }
 .loli-pink .progressBar div{
-	border-radius: 9999px;
+	
+}
+.loli-pink .progressBar:first-child {
+	margin-left: -25%;
 }
 
 .loli-pink .btnPrev{

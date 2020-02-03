@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Carousel Demo - Loli Pink</title>
+
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"><!--BootStrap-->
+	<link type="text/css" rel="stylesheet" href="../css/silk-carousel-lite.css" /><!--Carousel StyleSheet-->
+	<link type="text/css" rel="stylesheet" href="../css/CarouselTheme-LoliPink.css" />
+
+	<style type="text/css">
+		@font-face {
+			font-family: HGSoeiKakupoptai_local;
+			src: url(fonts/HGRPP1.TTC);
+		}
+		body{
+			background: url(../images/loli-pink/decor.png) rgb(255, 179, 218) no-repeat;
+			background-size: 10%;
+		}
+		.title{
+			text-align: center;
+			color: #ffffff;
+			text-shadow: 0 0 2px rgb(199, 0, 114);
+			display: block;
+		}
+		.lolishow {
+			margin-left: 17%;
+		}
+	</style>
+
+	<script src="js/jquery.min.js"></script><!--jQuery-->
+	<script src="../js/silk-carousel-lite.js"></script><!--Carousel-->
+	<script src="../locale/Carousel_ja.js"></script>
+	<script src="../js/CarouselTheme-loli-pink.js"></script>
+
+</head>
+<body>
+	<div class="title">
+		<h2>Theme Scheme: Loli Pink</h2>
+		<h3>ロリ・ピンク | <span style="font-family: DengXian !important;">萝莉粉</span></h3>
+	</div>
+	<div id="loliShowPortraits" class="lolishow"></div>
+	<script type="text/javascript">
+		carouselRun({
+			_target: "#loliShowPortraits",
+			theme: "loli-pink",
+			width: "80%",
+			height: "580px",
+			imageSrcs: [
+				"images/loli-pink-demo/lolipdemo1.jpg",
+				"images/loli-pink-demo/lolipdemo2.jpg",
+				"images/loli-pink-demo/lolipdemo3.jpg",
+				"images/loli-pink-demo/lolipdemo4.jpg",
+				"images/loli-pink-demo/lolipdemo5.jpg",
+			],
+			anchorHrefs: [
+				"https://ja.wikipedia.org/wiki/ロリータ・ファッション",
+				"images/loli-pink-demo/lolipdemo2.jpg",
+				"https://ja.wikipedia.org/wiki/アニメ",
+				"https://hataraku-saibou.com/character/?chara=platelet",
+				"images/loli-pink-demo/lolipdemo5.jpg",
+			],
+			htBoardTexts: [
+				"<h1>ロリは？</h1> \
+				<span>Who are lolis?</span> \
+				<p>ロリータ・ファッションは、1990年代以降に日本で流行したファッションスタイルの一つ。</p>",
+				"",
+				"<h1>アニメ</h1>\
+				<label>Anime / Animation</label>\
+				<p>アニメは、アニメーション（animation）の略語である。アニメーションを用いて構成された映像作品全般を指る</p>",
+				"<h1>血小板 - はたらく細胞</h1>\
+				<label>Kesshouban(Platelet) - Cells at Work</label>",
+				"",
+			]});
+	</script>
+</body>
+</html>

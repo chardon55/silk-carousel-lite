@@ -1,5 +1,5 @@
-﻿//シルク・カルーセル・ライト（バージョン：1.0.0）　日本語（日本）
-//Silk Carousel Lite v1.0.0 Japanese (Japan)
+﻿//シルク・カルーセル・ライト（バージョン：1.1.0）　日本語（日本）
+//Silk Carousel Lite v1.1.0 Japanese (Japan)
 
 $$silkc.lang = "ja";
 
