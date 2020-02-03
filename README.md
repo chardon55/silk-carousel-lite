@@ -4,7 +4,7 @@
 
 ## ❓ What is Silk Carousel Lite? ❔
 
-Silk Carousel Lite is a parallel project of Silk Carousel.
+Silk Carousel Lite is a parallel project of [Silk Carousel](https://github.com/dy55/Silk-Carousel).
 
 The Silk Carousel Project is now attempted to develop for the next major version (3.0.0). While Silk Carousel Lite is based upon Silk Carousel 2.x, and to make it better, lighter and more useful.
 
