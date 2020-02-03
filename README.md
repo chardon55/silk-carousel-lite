@@ -1,7 +1,5 @@
 # 💠 Silk Carousel Lite 💠
 
-<img src="silk.png" width="200px" />
-
 ![Version_1.1.0](.github/info/version.svg)
 
 ## ❓ What is Silk Carousel Lite? ❔
