@@ -92,19 +92,19 @@ The Silk Carousel Project is now attempted to develop for the next major version
 function carouselRun(info = {
     _target: new String,                 // Target Name (ID/Class/...)
     theme: new String,                   // Theme Name
-    width: new String,                   // Width (Default: "60%")
-    height: new String,                  // Height (Default: "450px")
+    width: "60%",                        // Width (Default: "60%")
+    height: "450px",                     // Height (Default: "450px")
     imageSrcs: new Array,                // Images URLs Array
     anchorHrefs: new Array,              // Links Hrefs Array
     htBoardTexts: new Array,             // Hyper-text Board Contents for Each Slide
-    _outline: new Boolean,               // Show Outline (Default: true)
-    playToggleBtn: new Boolean,          // Show Play/Pause Button (Default: true)
-    mouseLeaveHideBtn: new Boolean,      // Hide Buttons When Mouse Leaves (Default: true)
-    htBoardBackground: new Boolean,      // Show Background of the Hyper-text Board (Default: true)
+    _outline: true,                      // Show Outline (Default: true)
+    playToggleBtn: true,                 // Show Play/Pause Button (Default: true)
+    hideBtnsWhenMouseLeaves: true,       // Hide Buttons When Mouse Leaves (Default: true)
+    htBoardBackground: true,             // Show Background of the Hyper-text Board (Default: true)
     customLearnMoreContent: new Array,   // Custom Content of "Learn More" Button for Each Slide
-    startFrom: new Number,               // Start from Which Slide (Default: 1)
+    startFrom: 1,                        // Start from Which Slide (Default: 1)
     progressBarFilters: new Array,       // Progress Bars' Filters for Each Slide
-    showStatus: new Boolean,             // Whether show status box (Default: true)
+    showStatus: true,                    // Whether show status box (Default: true)
     showProgressBar = true,              // Show Progress Bar
     intervalTime = 5000,                 // Interval Time (ms)
     inspection_mode = false              // Inspection Mode Switch
