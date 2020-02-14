@@ -105,9 +105,9 @@ function carouselRun(info = {
     startFrom: 1,                        // Start from Which Slide (Default: 1)
     progressBarFilters: new Array,       // Progress Bars' Filters for Each Slide
     showStatus: true,                    // Whether show status box (Default: true)
-    showProgressBar = true,              // Show Progress Bar
-    intervalTime = 5000,                 // Interval Time (ms)
-    inspection_mode = false              // Inspection Mode Switch
+    showProgressBar: true,              // Show Progress Bar
+    intervalTime: 5000,                 // Interval Time (ms)
+    inspection_mode: false              // Inspection Mode Switch
 }){...}
 
 ```
