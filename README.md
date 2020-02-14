@@ -12,7 +12,7 @@ The Silk Carousel Project is now attempted to develop for the next major version
 
 1. Some of the code was changed to improve the performance.
 
-2. Inspection Mode was added for carousel testing.
+2. **Inspection Mode** was added for carousel testing.
 
 ## 🎯 Usage 🎯
 
