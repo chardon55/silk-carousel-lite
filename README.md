@@ -20,7 +20,7 @@ The Silk Carousel Project is now attempted to develop for the next major version
 
 1. Some of the code was changed to improve the performance.
 
-2. Inspection Mode was added for carousel testing.
+2. **Inspection Mode** was added for carousel testing.
 
 ## 🎯 Usage 🎯
 
@@ -111,9 +111,9 @@ function carouselRun(info = {
     htBoardBackground: true,             // Show Background of the Hyper-text Board (Default: true)
     customLearnMoreContent: new Array,   // Custom Content of "Learn More" Button for Each Slide
     startFrom: 1,                        // Start from Which Slide (Default: 1)
-    indicatorFilters: new Array,       // Progress Bars' Filters for Each Slide
+    indicatorFilters: new Array,         // Progress Bars' Filters for Each Slide
     showStatus: true,                    // Whether show status box (Default: true)
-    showindicator = true,              // Show Progress Bar
+    showindicator = true,                // Show Progress Bar
     intervalTime = 5000,                 // Interval Time (ms)
     inspection_mode = false              // Inspection Mode Switch
 }){...}
