@@ -1,5 +1,5 @@
 /*	Carousel StyleSheet
- *	Version: 1.1.0
+ *	Version: 1.1.1
  *	<> by dy55
  */
 
@@ -133,14 +133,14 @@
 }
 
 /*Progress bar embedded*/
-.progressBar{
+.indicator{
 	position: relative;
 	height: 100%;
 	display: inline-block;
 	overflow: hidden;
 	background-color: rgba(255, 255, 255, 0.4);
 }
-.progressBar > div{
+.indicator > div{
 	background-color: #ffffff;
 	position: relative;
 	height: 100%;

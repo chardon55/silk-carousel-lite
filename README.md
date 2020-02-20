@@ -1,12 +1,20 @@
 # 💠 Silk Carousel Lite 💠
 
-![Version_1.1.0](.github/info/version.svg)
+![Version_1.1.1](.github/info/version.svg)
 
 ## ❓ What is Silk Carousel Lite? ❔
 
 Silk Carousel Lite is a parallel project of [Silk Carousel](https://github.com/dy55/Silk-Carousel).
 
 The Silk Carousel Project is now attempted to develop for the next major version (3.0.0). While Silk Carousel Lite is based upon Silk Carousel 2.x, and to make it better, lighter and more useful.
+
+## 💡 What is new in the SC-Lite 1.1.1? 💡
+
+1. Refactored
+
+2. Theme Modification
+
+2. Added Translations
 
 ## 💡 What is new in the SC-Lite 1.1.0? 💡
 
@@ -103,9 +111,9 @@ function carouselRun(info = {
     htBoardBackground: true,             // Show Background of the Hyper-text Board (Default: true)
     customLearnMoreContent: new Array,   // Custom Content of "Learn More" Button for Each Slide
     startFrom: 1,                        // Start from Which Slide (Default: 1)
-    progressBarFilters: new Array,       // Progress Bars' Filters for Each Slide
+    indicatorFilters: new Array,       // Progress Bars' Filters for Each Slide
     showStatus: true,                    // Whether show status box (Default: true)
-    showProgressBar = true,              // Show Progress Bar
+    showindicator = true,              // Show Progress Bar
     intervalTime = 5000,                 // Interval Time (ms)
     inspection_mode = false              // Inspection Mode Switch
 }){...}

@@ -1,8 +1,8 @@
 /*	Carousel Theme Scheme: Loli Pink
 	by dy55
 	2019-8-25
-	for Carousel v1.1.0
-	v1.2.0
+	for Carousel v1.1.1
+	v1.2.1
 */
 /*This theme needs bootstrap to work properly*/
 .loli-pink{
@@ -38,7 +38,7 @@
 	/*width: 80% !important;*/
 	text-align: center;
 }
-.loli-pink .progressBar {
+.loli-pink .indicator {
 	border-radius: 9999px;
 	background-color: rgba(255, 73, 173, 0.86);	
 	border: 1.5px solid rgb(255, 68, 171);
@@ -46,10 +46,10 @@
 	width: 20px !important;
 	height: 20px !important;
 }
-.loli-pink .progressBar div{
+.loli-pink .indicator div{
 	
 }
-.loli-pink .progressBar:first-child {
+.loli-pink .indicator:first-child {
 	margin-left: -25%;
 }
 
@@ -66,18 +66,24 @@
 	background-color: rgb(255, 84, 182);
 	filter: none !important;
 	box-shadow: 0 0 8px snow;
-	transition: opacity 0.3s, box-shadow 0.3s;
+	transition: opacity 0.3s, box-shadow 0.3s, transform 0.3s ease;
+	border-radius: 9999px;
 }
 .loli-pink .turnBtn:hover{
 	box-shadow: 0 0 14px snow;
+	transform: translateY(-5px);
 }
 
 .loli-pink .playPause {
 	background-color: rgb(255, 84, 182);
 	box-shadow: 0 0 8px snow;
-	transition: opacity 0.5s;
+	transition: opacity 0.5s, transform 0.3s ease;
 	background-size: 67%;
 	filter: none !important;
+	border-radius: 9999px;
+}
+.loli-pink .playPause:hover {
+	transform: translateY(-5px);
 }
 
 .loli-pink *:lang(zh-cn){

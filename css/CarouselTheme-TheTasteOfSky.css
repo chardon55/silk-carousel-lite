@@ -1,7 +1,7 @@
 /*	File created date: 2019-8-25
  	The Taste of Sky	Created: 2019-8-23
- 	For Carousel 1.1.0
-	v1.1.0
+ 	For Carousel 1.1.1
+	v1.1.1
 */
 .the-taste-of-sky {
 	background-color: deepskyblue;
@@ -39,12 +39,12 @@
 	filter: none !important;
 }
 
-.the-taste-of-sky .progressBar {
+.the-taste-of-sky .indicator {
 	background-color: rgba(108, 196, 231, 0.50);
 	border-radius: 4px;
 }
 
-.the-taste-of-sky .progressBar>div {
+.the-taste-of-sky .indicator>div {
 	background-color: rgba(255, 255, 255, 0.87);
 }
 

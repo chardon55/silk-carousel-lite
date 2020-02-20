@@ -1,5 +1,5 @@
 ﻿/*                    Silk Carousel Lite                    *
- *  Version: 1.1.0                                          *
+ *  Version: 1.1.1                                          *
  *  Created by: dy55                                        */
 
 /**
@@ -36,6 +36,7 @@ var $$silkc = {
 		progress: "Slide Progress"
 	}
 }
+
 function carouselRun({
 	_target = new String,
 	theme = new String,
@@ -50,9 +51,9 @@ function carouselRun({
 	htBoardBackground = true,
 	customLearnMoreContent = new Array,
 	startFrom = 1,
-	progressBarFilters = new Array,
+	indicatorFilters = new Array,
 	showStatus = true,
-	showProgressBar = true,
+	showIndicators = true,
 	intervalTime = 5000/*ms*/,
 	inspection_mode = false
 }) {
@@ -75,9 +76,9 @@ function carouselRun({
 		leaveHide: hideBtnsWhenMouseLeaves,
 		customLearnMore: customLearnMoreContent,
 		usedTheme: theme,
-		barFilters: progressBarFilters,
+		barFilters: indicatorFilters,
 		showStatus: showStatus,
-		showProgressBar: showProgressBar,
+		showIndicators: showIndicators,
 		intervalTime: intervalTime,
 		inspection_mode: inspection_mode
 	}
@@ -85,7 +86,7 @@ function carouselRun({
 	FormatSet();
 	localeCheck();
 	otherPreset();      //otherPreset()
-	ProgressBarSetPut();
+	SetIndicators();
 	SilkCarouselInit();
 	otherOperation();   //otherOperation()
 }
@@ -131,7 +132,7 @@ function SilkCarouselInit() {
 		$(`${$$silkc.carouselInfo.carouselTarget} .playPause, ${$$silkc.carouselInfo.carouselTarget} .turnBtn`).addClass("leaveHide");
 
 	$(`${$$silkc.carouselInfo.carouselTarget} .htBoard`)
-		.append(`<a class='slideAnchor' target='_new'><span class='learnmorespan'>${$$silkc.learnMore}</span><span class='${rightArrowLearnMore}'>></span></a>`)
+		.append(`<a class='slideAnchor' target='_new'><span class='learnmorespan'>${$$silkc.learnMore}</span><span class='${rightArrowLearnMore}'> > </span></a>`)
 		.prepend("<div class='hText'></div>")
 		.css({
 			"background-color": $$silkc.carouselInfo.htBg ? "rgba(0, 0, 0, 0.3)" : "none"
@@ -145,8 +146,7 @@ function SilkCarouselInit() {
 	$(`${$$silkc.carouselInfo.carouselTarget} .playPause`).css({
 		"display": $$silkc.carouselInfo.playButton ? "inline-block" : "none",
 		"margin-top": parseFloat($$silkc.carouselInfo.curHeight) * 3 / 4 + SliceToUnit($$silkc.carouselInfo.curHeight)
-	})
-		.click(() => {
+	}).click(() => {
 			carouselPlayToggle();
 		});
 
@@ -224,11 +224,11 @@ function inspect_init() {
 }
 
 let offset = 0;//%
-function ProgressBarSetPut() {
+function SetIndicators() {
 	$($$silkc.carouselInfo.carouselTarget).append("<div class='barSet'></div>");
 	for (let i = 0; i < $$silkc.carouselInfo.imageArray.length; i++) {
 		const cNum = i + 1;
-		$(`${$$silkc.carouselInfo.carouselTarget} > .barSet`).append(`<div class='${barClassName} bar${i}'></div>`);
+		$(`${$$silkc.carouselInfo.carouselTarget} > .barSet`).append(`<div class='${indicatorClassName} bar${i}'></div>`);
 		
 		$(`${$$silkc.carouselInfo.carouselTarget} .bar${i}`).click(() => {
 			if ($$silkc.playStatus == $$silkc.pause)
@@ -244,15 +244,15 @@ function ProgressBarSetPut() {
 		"margin-top": timesOfHeight(1, -19)
 	});
 	let gap = 0.25;//%
-	$(`${$$silkc.carouselInfo.carouselTarget} .${barClassName}`).css({
+	$(`${$$silkc.carouselInfo.carouselTarget} .${indicatorClassName}`).css({
 		"width": `${100 / $$silkc.carouselInfo.imageArray.length - gap + offset}%`,
 		"margin-right": `${gap}%`
 	});
 
-	if (!$$silkc.carouselInfo.showProgressBar)
+	if (!$$silkc.carouselInfo.showIndicators)
 		$(".barSet").css('display', 'none');
 
-	$(`.${barClassName}`).html("<div></div>");
+	$(`.${indicatorClassName}`).html("<div></div>");
 }
 
 function SliceToUnit(str) {
@@ -305,14 +305,14 @@ function TurnPrev(transitionBar = true) {
 }
 
 ///////////////////////////////////////
-//Progress Bar Section
+//Indicator Section
 
-const barClassName = "progressBar"; //Do NOT edit it.
+const indicatorClassName = "indicator"; //Do NOT edit it.
 
 ///////////////////////////////////////
 
 function barClear() {
-	$(`${$$silkc.carouselInfo.carouselTarget} .${barClassName} > div`).css({
+	$(`${$$silkc.carouselInfo.carouselTarget} .${indicatorClassName} > div`).css({
 		"transition": "none",
 		"width": "0"
 	});
@@ -464,7 +464,7 @@ function otherOperation(){ }  //This function is safe to be overwritten.
 /////////////////////
 
 function widthToTime(width) {
-	const full = $(`${$$silkc.carouselInfo.carouselTarget} > .barSet > .${barClassName}`).width();
+	const full = $(`${$$silkc.carouselInfo.carouselTarget} > .barSet > .${indicatorClassName}`).width();
 	const times = width / full;
 	const time = $$silkc.carouselInfo.intervalTime * times;
 	return time.toPrecision(1);

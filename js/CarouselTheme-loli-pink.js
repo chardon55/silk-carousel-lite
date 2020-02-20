@@ -1,7 +1,7 @@
 // Loli Pink Theme Scheme
 // 2019-8-26
-// for Carousel v1.1.0
-// v1.1.0
+// for Carousel v1.1.1
+// v1.1.1
 // This theme needs bootstrap to work properly
 
 $$silkc.pausemouseover = "url(../images/loli-pink/pause/pause-mo.png)";
