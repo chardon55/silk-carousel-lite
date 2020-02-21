@@ -1,5 +1,5 @@
 ﻿/*                    Silk Carousel Lite                    *
- *  Version: 1.1.1                                          *
+ *  Version: 1.2.0                                          *
  *  Created by: dy55                                        */
 
 /**
@@ -44,11 +44,11 @@ function carouselRun({
 	height = "450px",
 	imageSrcs = new Array,
 	anchorHrefs = new Array,
-	htBoardTexts = new Array,
+	captions = new Array,
 	_outline = true,
 	playToggleBtn = true,
 	hideBtnsWhenMouseLeaves = true,
-	htBoardBackground = true,
+	captionBg = true,
 	customLearnMoreContent = new Array,
 	startFrom = 1,
 	indicatorFilters = new Array,
@@ -69,10 +69,10 @@ function carouselRun({
 		curSlide: startFrom,
 		imageArray: imageSrcs,
 		anchorArray: anchorHrefs,
-		htBoard: htBoardTexts,
+		htBoard: captions,
 		outline: _outline,
 		playButton: playToggleBtn,
-		htBg: htBoardBackground,
+		htBg: captionBg,
 		leaveHide: hideBtnsWhenMouseLeaves,
 		customLearnMore: customLearnMoreContent,
 		usedTheme: theme,
@@ -340,8 +340,8 @@ function buttonsBuild() {
 
 }
 
-var pauseimgUrl = "url(../images/pause.png)";
-var playimgUrl = "url(../images/start.png)";
+var pauseimgUrl = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHYAAACLCAYAAAC0q23WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE4SURBVHhe7dGxDYAwEARBm/57BgduAIkAr2aS+/S1AwAAAAAAgIPMva/cyz5/Yy77/MTpP157iRE2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2StgoYaOEjRI2SlgAAAAAAIBzjPEASBsI4Nu4en8AAAAASUVORK5CYII=')";
+var playimgUrl = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH0AAACLCAYAAABMS5YhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQHSURBVHhe7d2/bhQxEIDxHK8AEhIKLRUFEggJSupQhvcID5K8RyiTlhYqKirqIJAQPMMxc2dLmz932fXaa8/4+0lWspDQfAzcjSzlAAAAAAAAAAAAAA1ar9eHcs7DI3oQokfH4ZfhmYQeRlcX4bfglUS+GT1i6r2SuLuiq89yDsOXwguNusm730n4cnggQcdEV9/lvAnfBssk5Njo0Wn4VlglEadGVz/kMPVWSbyU6BFTb5GEmxNd/ZXD2ztLJNjc6BFLnQIehI+tOgrxmfqMWo8enUv4CzksdTKwEl0dybmS8Cx1ZrIUPTqV8KxyZ7AYXb2Tw9Qnsho90qlnqTOR9ejqmZwvEp6lzkgeokcnEp6lzgieoquHcvTtHffz9vAWPTqW8Iqpv4PX6NFmqRM+R+A9umKVe0MP0SOdepY6oqfoiqWO6C16pEudbu/n9RpdPZfT5VKn5+iRLnW6WuUSfaurVS7Rr+tilUv02+Iq1+1Sh+i7uV3qEP1+7u7nEX0cV/fziD6Ni/t5RJ/O/CqX6OnM3s8j+jwmlzpEz8PUUofo+Zi5n0f0/Jq/n0f0cppd5RK9rCZXuURfRlP384i+nGaWOkRfXvX7eUSvo+r9PKLXVeV+HtHrW3yVS/R2LLbKJXpbFlnlEr1NRVe5RG9bkft5RG9f9vt5RLcj2/08otuSZZVLdJtm3c8jul3JSx2i2xeXOqOnnuj2na1Wq0dyvobne63Cx6zkb52+wrzaPqGQP3JeSuyf28fxmHSbPkrsxynBFdFt+SbnqcQ+2z6mIbodHyT2q9TpHiJ6+y7l6HR/2j7OR/R2/ZOj0/0+x3QPEb1NOt0vck73ENHbUmy6h4jejksJrUuWItM9RPT6dLrf6nRvH8sjel2TV6g5sIat47ec1xK72P/b+zDpy9MV6pNawRXRlxOXLLNWqDkQvbxF3oZNQfSyii5ZUhG9jOame4jo+S22ZElF9HwWX7KkInoeVZYsqVjOzJN8T60mJj3drHtqNRF9uiz31Goi+jTZ7qnVRPRxst9Tq4no+zW9ZElF9N2aXKHmQPTbXE73ENGva36FmgPRt8ysUHMgurEVag49r2Gr3lOrqddJr35PrabeojdzT62mXqK7fxs2RQ/R3S5ZUnmOznTv4DV6F0uWVN6id7VkSeUpendLllQeljMm76nVZH3Szd5Tq8lqdPP31GqyGN3FPbWaLEV3dU/NHX0hJyeXRX5WGWaSSLmiZ/9JRShEQ22SpWO6rZFgc6JfhD8GhbT0Qo4VqmUyrVMnvcrPEUdGEnFs9F9yeKG2sJr/vHd9T80dnd7NHN+Nt2EeadRN3ut4G+aZxL0Znen2TgNvUjPd/ZDQGp0lCwAAAAAAUxwc/AcNrnA3NL57+gAAAABJRU5ErkJggg==')";
 
 let statusBoxTimeout;
 let timeoutRefer;
