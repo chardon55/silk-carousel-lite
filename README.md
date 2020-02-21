@@ -2,11 +2,9 @@
 
 ![Version_1.2.0](.github/info/version.svg)
 
-## ❓ What is Silk Carousel Lite? ❔
-
 Silk Carousel Lite is a micro website carousel project.
 
-## 💡 What is new in the SC-Lite 1.2.0? 💡
+## 💡 Changes 💡
 
 1. Changed extern png image references to embedded base64 code, in order to improve the performance.
 
