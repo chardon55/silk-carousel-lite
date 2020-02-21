@@ -4,7 +4,7 @@
 
 ## ❓ What is Silk Carousel Lite? ❔
 
-Silk Carousel Lite is a micro website carousel project based on [Silk Carousel](https://github.com/dy55/Silk-Carousel) 2.
+Silk Carousel Lite is a micro website carousel project.
 
 ## 💡 What is new in the SC-Lite 1.2.0? 💡
 
