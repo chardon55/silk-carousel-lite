@@ -2,7 +2,7 @@
 
 ![Version_1.2.0](.github/info/version.svg)
 
-Silk Carousel Lite is a micro website carousel project.
+Silk Carousel Lite is a micro website carousel project based on previous Silk Carousel.
 
 ## 💡 Changes 💡
 
