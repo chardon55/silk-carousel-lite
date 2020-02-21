@@ -1,26 +1,20 @@
 # 💠 Silk Carousel Lite 💠
 
-![Version_1.1.1](.github/info/version.svg)
+![Version_1.2.0](.github/info/version.svg)
 
 ## ❓ What is Silk Carousel Lite? ❔
 
-Silk Carousel Lite is a parallel project of [Silk Carousel](https://github.com/dy55/Silk-Carousel).
+Silk Carousel Lite is a micro website carousel project based on [Silk Carousel](https://github.com/dy55/Silk-Carousel) 2.
 
-The Silk Carousel Project is now attempted to develop for the next major version (3.0.0). While Silk Carousel Lite is based upon Silk Carousel 2.x, and to make it better, lighter and more useful.
+## 💡 What is new in the SC-Lite 1.2.0? 💡
 
-## 💡 What is new in the SC-Lite 1.1.1? 💡
+1. Changed extern png image references to embedded base64 code, in order to improve the performance.
 
-1. Refactored
+2. Optimized effect.
 
-2. Theme Modification
+3. Code refactoring.
 
-2. Added Translations
-
-## 💡 What is new in the SC-Lite 1.1.0? 💡
-
-1. Some of the code was changed to improve the performance.
-
-2. **Inspection Mode** was added for carousel testing.
+4. Refined locale files.
 
 ## 🎯 Usage 🎯
 
@@ -80,7 +74,7 @@ The Silk Carousel Project is now attempted to develop for the next major version
                     "images/qd6.jpg",
                     "#"
                 ],
-                htBoardTexts: [
+                captions: [
                     "<label>Brio of Qingdao</label><h2>May 4th Square</h2>",
                     "",
                     "",
@@ -104,11 +98,11 @@ function carouselRun(info = {
     height: "450px",                     // Height (Default: "450px")
     imageSrcs: new Array,                // Images URLs Array
     anchorHrefs: new Array,              // Links Hrefs Array
-    htBoardTexts: new Array,             // Hyper-text Board Contents for Each Slide
+    captions: new Array,                 // Caption for Each Slide
     _outline: true,                      // Show Outline (Default: true)
     playToggleBtn: true,                 // Show Play/Pause Button (Default: true)
     hideBtnsWhenMouseLeaves: true,       // Hide Buttons When Mouse Leaves (Default: true)
-    htBoardBackground: true,             // Show Background of the Hyper-text Board (Default: true)
+    captionBg: true,                     // Whether show background of the caption (Default: true)
     customLearnMoreContent: new Array,   // Custom Content of "Learn More" Button for Each Slide
     startFrom: 1,                        // Start from Which Slide (Default: 1)
     indicatorFilters: new Array,         // Progress Bars' Filters for Each Slide
