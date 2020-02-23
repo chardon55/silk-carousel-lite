@@ -89,7 +89,7 @@ Silk Carousel Lite is a micro website carousel project.
 
 ```JavaScript
 //function information
-function carouselRun(info = {
+function carouselRun({
     _target: new String,                 // Target Name (ID/Class/...)
     theme: new String,                   // Theme Name
     width: "60%",                        // Width (Default: "60%")
