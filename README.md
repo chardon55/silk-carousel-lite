@@ -14,7 +14,7 @@ Silk Carousel Lite is a micro website carousel project based on previous Silk Ca
 
 4. Refined locale files.
 
-## 🎯 Usage 🎯
+## 🎯 Tips to Use 🎯
 
 1. Import the files
 
