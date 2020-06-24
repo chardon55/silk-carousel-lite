@@ -1,0 +1,206 @@
+/*	Carousel StyleSheet
+ *	Version: 1.2.0
+ *	<> by dy55
+ */
+
+:root {
+	--button-width: 2.4rem;
+	--buttton-height: 2.4rem;
+}
+
+.silkCarousel {
+	background-color: #110089;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+}
+.silkCarousel * {
+	font-family: Calibri, DengXian, 'Yu Gothic UI', 'Malgun Gothic';
+}
+
+.statusField{
+	position: absolute;
+	color: #ffffff;
+	z-index: 1000;
+	font-size: 160%;
+	text-shadow: 0 0 4px #000000;
+}
+
+.hText{
+	color: #ffffff;
+	padding: 1%;
+}
+
+.leaveHide{
+	opacity: 0;
+}
+
+.slideAnchor{
+	padding: 1%;
+	text-align: center;
+	color: #ffffff;
+	position: relative;
+	transition: all 0.3s;
+	text-decoration: underline rgba(255, 255, 255, 0);
+	margin-top: 1%;
+}
+.slideAnchor:hover{
+	text-decoration: underline;
+	color: #ffffff;
+}
+.slideAnchor:hover > .rightArrowLearnMore{
+	transform: translate(5px);
+}
+
+.rightArrowLearnMore{
+	position: relative;
+	margin-left: 5px;
+	display: inline-block;
+	transition: all 0.3s;
+}
+
+.playPause{
+	width: var(--button-width);
+	height: var(--buttton-height);
+	transition: opacity 0.5s, background-color 0.3s, box-shadow 0.3s;
+	cursor: pointer;
+	position: relative;
+	float: left;
+	background: center no-repeat rgba(0, 0, 0, 0.3);
+	background-size: 35%;
+	z-index: 100;
+	margin-left: 20%;
+	bottom: -64px;
+}
+	.playPause:hover {
+		background: center no-repeat #6d6d6d;
+		background-size: 35%;
+	}
+
+.htBoard{
+	width: 90%;
+	padding-left: 2%;
+}
+.htBoard *{
+	color: #ffffff;
+}
+
+/*Languages*/
+.htBoard:lang(zh-cn) {	/*Simplified Chinese*/
+	font-family: DengXian;
+}
+.htBoard:lang(zh-mo), .htBoard:lang(zh-hk), .htBoard:lang(zh-tw){	/*Traditional Chinese*/
+	font-family: 'Microsoft JhengHei UI';
+}
+.htBoard:lang(ja){	/*Japanese*/
+	font-family: 'Yu Gothic UI';
+}
+.htBoard:lang(ko){	/*Korean*/
+	font-family: 'Malgun Gothic';
+}
+
+/**************************************/
+.turnBtn {
+	background: no-repeat center;
+	background-size: cover;
+	transition: all 0.3s;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI4AAACLCAYAAAC3MKG7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATeSURBVHhe7d3Ji1xlGIXxrgxGogsjCrpScVqKmjhEJBiHKOhGRUQIEo3z0I7oQtCFW3Hl3yAIblwJAXFAFBxXrhxxVpwTE6NJ+5x7v3TZ6ar7Vbe9qvv84FBd1fk2zclbd6pbM5IkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZK0Mubm5gbkevI8uY6sKr+SRiuleYr8TeIRMii/njr+j1g5s+RRsobMkdXE4mg8JssTPDxD1jcvDAtjcTQapXmAh8fJ4X/LgySTZypZnP+B0jzGw7PkqOaFoZRmLZnav6/FWaYyafIWNUr+rvvJgebZFLI4S5Q9JfIwP2bSHN28uFgKs45kA3kqWZyly6R5sv1xrBRmH5naiaMJMWVWkQfJJPaSrWWp+owipDS/pxUVu0mO6ajPKEG2aWbTiIoD5ENyblmqPqMIk06aD8gpZZn6jCLc11SiW85NvUhOKsvUZxThIVKbNJ+T58jhBwDVRxTh3rSi4h2yiRxZlqnPKEK2af4gXV4jJ5Ql6jvKcA85mGZ0yKRxI1gtypBJk2MwXd4gx5cl6jvKcDc5dOXeOJk0p5Yl6jvKkIN7f6YZHd4kx5Ql6jvKcBf5K83o8C45rSxR31GG7HLXSvM28RiNWpQhkyZnsLu8R84oS9R3lCEbwv+kGR2yIXxEWaK+owx3kj1pRgcnjYYowx1NLbrlDLdXRapFGVKa2mmETJozyxL1GUXI5Z63pxUV7xNPVqpFGVKa2qURbtOoRRFWk51pRUUmzbiPuKhvKMNt5Lc0o0MmzellifqMIkw6aVKaDWWZ+o4ypDS1SZO3J89ya37S3JpWVKQ0Xk+jFmXYQWqTJp958so9zU+aW9KKikyaE8sy9R1l2EA+SjMqdpQlUotSbCPfNvUY70tyUVkitShFPt/0dRrS4QfiHSS0EKW4knyThnT4gjh5tBClyOT5Lg3p8DPZUpZILUqRyVN72/qMbC5LpBal2EiyTdMl1+dcXJZILUqRyfNVGtLhU3JhWSK1KEUmz09pSId9xLctLUQpcpynNnk+IReUJVKLUmTy/JqGdMhdKs4rS6QWpbiC1Pa2PiabyhKpRSk2k9rkCSePFqIUTh4tD6W4hNQmT+5b7OTREIXITa8vJ7Wz6tnb2liWSS1KkV312uTJcR4nj4YoRD7peRmpnRjNEeZFk4fXpvZrhTQBCnANqU2enNs6vyxp8NwbFPRZCkAuJd+TLrmT+jllmcVRiyJcS2qflviFNJOHR4uj+cmzlfxIuuQa5rNJvrBValGIG0ht8uR6ny3E26OoRRnyea0cJKxdkpEj0NvLMqlFKW4itcmT8pxVlkjzkyd7W9kgHieXY6Q828oyqSlPTk9sJ5PsbeW+PN4+RS3KkL2tnFWvlWc/eYGsL0vVd5Qh5bmZ1O4pmLeuXeTkslR9RxnytpVPT9RufRuvkKn9HgiPfC7BYDCY42EXuZ/szmsd1hGP8WghpsnVpOv2/m+RY8s/nzpOnOV7mWTy7GmeLTYoj9JiTJWcGB31DXuvEyeOxnqJzJK9zbMht29Ux3S5kfx3m+dVclz5tTQaJVlL8t0Rh755L9/lObVvVVphlCUHCTN5nDiaHGVZQ64iTxO/YESSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJE2TmZl/ATwA1DuOfacCAAAAAElFTkSuQmCC');
+	z-index: 100;
+	padding: 0.3% 0;
+}
+.turnBtn:hover{
+	background-color: #6d6d6d;
+}
+
+.btnPrev{
+	float: left;
+}
+
+
+.btnNext{
+	float: right;
+	transform: rotateY(180deg);
+}
+
+/*Progress bar Set*/
+.barSet{
+	height: 3%;
+	position: relative;
+	width: 100%;
+	z-index: 1;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+/*Progress bar embedded*/
+.indicator{
+	position: relative;
+	height: 100%;
+	display: inline-block;
+	overflow: hidden;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+.indicator > div{
+	background-color: #ffffff;
+	position: relative;
+	height: 100%;
+	width: 0;
+	z-index: 2;
+}
+
+.button{
+	width: 42px;
+	height: 42px;
+	background-color: rgba(0, 0, 0, 0.3);
+	color: #ffffff;
+	display: inline-block;
+	text-align: center;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 800px){
+	.button{
+		width: 30px;
+		height: 30px;
+		font-size: 25px;
+	}
+
+	.htBoard {
+		width: 95%;
+	}
+}
+
+.statusBox{
+	float: left;
+	font-size: 120%;
+	margin: -4rem 0 0 0;
+	width: 100%;
+	text-align: center;
+	color: #FFFFFF;
+	text-shadow: 0 0 0.18rem #000000;
+	cursor: default;
+	z-index: 0;
+}
+
+.silk-inspection {
+	outline: 1.5px solid #000000 !important;
+}
+.silk-inspection:hover {
+	outline-color: #0063ff !important;
+}
+.silk-inspection:focus {
+	outline-color: #ff0000 !important;
+}
+
+.silk-inspection-window {
+	position: fixed;
+	background-color: #ffc76f;
+	border: solid 1.5px #383838;
+	display: inline-block;
+	z-index: 1000;
+	top: 0px;
+	right: 0px;
+	padding: 10px;
+	transition: transform 0.3s ease;
+}
